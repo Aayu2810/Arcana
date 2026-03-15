@@ -4,7 +4,6 @@
 
 Arcana is a WebGL hand-tracking playground built with **MediaPipe Hands** + **Three.js**. No installs, no controllers — just your webcam and your hands against a neon dark backdrop.
 
-![Arcana Preview](docs/preview.png)
 
 ## 🔴 Live Demo
 
