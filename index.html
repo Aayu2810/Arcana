@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arcana — Shape the Unseen</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Background atmosphere -->
+  <div id="bg-stars"></div>
+  <div id="nebula"></div>
+
+  <!-- WebGL canvas (Three.js) -->
+  <canvas id="three-canvas"></canvas>
+
+  <!-- Webcam (hidden) -->
+  <video id="webcam" autoplay playsinline muted></video>
+
+  <!-- Landmark overlay canvas -->
+  <canvas id="landmark-canvas"></canvas>
+
+  <!-- HUD -->
+  <header id="hud-header">
+    <div id="logo">✦ ARCANA</div>
+    <div id="status-pill">
+      <span id="status-dot"></span>
+      <span id="status-text">Awakening…</span>
+    </div>
+  </header>
+
+  <!-- Gesture guide -->
+  <aside id="gesture-guide">
+    <h3>Gestures</h3>
+    <ul>
+      <li><span class="g-icon">✊</span><span><b>Left fist</b> — cycle shape</span></li>
+      <li><span class="g-icon">☝️</span><span><b>Point (R)</b> — rotate object</span></li>
+      <li><span class="g-icon">👍</span><span><b>Thumbs up (R)</b> — grow</span></li>
+      <li><span class="g-icon">👎</span><span><b>Thumbs down (R)</b> — shrink</span></li>
+      <li><span class="g-icon">🤲</span><span><b>Both open hands</b> — spread to scale</span></li>
+      <li><span class="g-icon">👋</span><span><b>Wave (R)</b> — explosion burst</span></li>
+      <li><span class="g-icon">✊</span><span><b>Right fist</b> — randomise color</span></li>
+    </ul>
+    <button id="toggle-guide">Hide</button>
+  </aside>
+
+  <!-- Active gesture flash -->
+  <div id="gesture-flash"></div>
+
+  <!-- Shape name toast -->
+  <div id="shape-toast"></div>
+
+  <!-- Webcam mini-view toggle -->
+  <div id="cam-preview-wrap">
+    <canvas id="cam-preview"></canvas>
+    <label id="cam-label">cam</label>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/webcam.js"></script>
+  <script src="js/gestures.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/mediapipe.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
